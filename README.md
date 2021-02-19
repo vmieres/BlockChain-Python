@@ -61,4 +61,11 @@ To transfer money from one account to another you will need to run send_tx funct
     
 
 
+![](snap_shots/tx1.png)
+
+
+![](snap_shots/tx2.png)
+
+![](snap_shots/tx3.png)
+
 Please refer to snap_shots folder for more images.
