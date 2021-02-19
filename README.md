@@ -29,14 +29,7 @@ After installing PHP in our computers we can install the `hd-wallet-derive` libr
 - Navigate to the [Github website](https://github.com/dan-da/hd-wallet-derive) for the `hd-wallet-derive` library and scroll down to the installation part.
 
 - Next execute this commands:
-
-`git clone https://github.com/dan-da/hd-wallet-derive`
-
-`cd hd-wallet-derive`
-
-`php -r "readfile('https://getcomposer.org/installer');" | php`
-
-`php -d pcre.jit=0 composer.phar install`
+![](snap_shots/derive_installation.png)
 
 - Afer that, you should have a folder called `hd-wallet-derive` that contains the PHP library.
 
@@ -47,38 +40,25 @@ After installing PHP in our computers we can install the `hd-wallet-derive` libr
 ![](images/hd-folder.png)
 
 Run the following commands.
-`./hd-wallet-derive.php -g --key=xprv9tyUQV64JT5qs3RSTJkXCWKMyUgoQp7F3hA1xzG6ZGu6u6Q9VMNjGr67Lctvy5P8oyaYAL9CAWrUE9i6GoNMKUga5biW6Hx4tws2six3b9c`
 
-`./hd-wallet-derive.php -g --key=xprv9tyUQV64JT5qs3RSTJkXCWKMyUgoQp7F3hA1xzG6ZGu6u6Q9VMNjGr67Lctvy5P8oyaYAL9CAWrUE9i6GoNMKUga5biW6Hx4tws2six3b9c --numderive=3 --preset=bitcoincore --cols=path,address --path-change`
+> ./hd-wallet-derive.php -g >--key=xprv9tyUQV64JT5qs3RSTJkXCWKMyUgoQp7F3hA1xzG6ZGu6u6Q9VMNjGr6>7Lctvy5P8oyaYAL9CAWrUE9i6GoNMKUga5biW6Hx4tws2six3b9c
+
+>./hd-wallet-derive.php -g >--key=xprv9tyUQV64JT5qs3RSTJkXCWKMyUgoQp7F3hA1xzG6ZGu6u6Q9VMNjGr6>7Lctvy5P8oyaYAL9CAWrUE9i6GoNMKUga5biW6Hx4tws2six3b9c >--numderive=3 --preset=bitcoincore --cols=path,address >--path-change
 
 
 ![](images/hd-folder1.png)
 
-### Wallet.py-file
+### **Wallet.py-file**
 This file runs all the functions that interact with hd-wallet-derive using the command line. The function below calls out the dictionary of coins with addresses and privkeys.
 
-`def derive_wallets(coin):`
+![](snap_shots/def_derive_wallets.png)
 
-`   command = './derive -g --mnemonic="{mnemonic}" --cols=path, address, privkey, pubkey --format=json --coin="{coin}" --numderive= 2'`
+![](snap_shots/coins.png)
 
-`   p = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)`
-`   (output, error) = p.communicate()`
+To transfer money from one account to another you will need to run send_tx functions.
 
-`   p_status = p.wait()`
-
-`   keys = json.loads(output)`
-`   return keys`
-
-`coins = {
-    ETH: derive_wallets(ETH),
-    BTCTEST: derive_wallets(BTCTEST)
-    }`
-
-    `print(coins)`
-
-    ![](snap_shots/coins.png)
-
-    To transfer money from one account to another you will need to run send_tx functions.
-
-    ![](snap_shots/def_sent_tx.png)
+![](snap_shots/def_sent_tx.png)
     
+
+
+Please refer to snap_shots folder for more images.
